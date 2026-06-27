@@ -1,52 +1,150 @@
 /*CSS by Darby McGill*/
-/*Color Palette
-DEEP BLACK = #05080D
-SLATE BLUE = #65768C
-STEEL BLUE = #263640
-BURNT ORANGE = #BF5B04
-EARTH = #733917
+/*
+Color pallette;
+soft lavender: #f7f2ff
+main purple: #6a0dad
+lighter purple: #b57edc
+deep purple text: #2d004d
+purple glow: rgba(106, 13, 173, 0.15)
 */
-/* Global (base) MOBILE FIRST)*/
+/* Global (base) MOBILE FIRST) */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  padding: 1rem;
+    font-family: Arial, sans-serif;
+    background-color: #f7f2ff; 
+    color: #2d004d; 
+    line-height: 1.6;
+    padding: 1rem;
 }
-
-header, nav, main, footer {
-  margin-bottom: 1.5rem;
+/* HEADER */
+header {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #6a0dad; 
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
-
+header h1 {
+    font-size: 2rem;
+}
+/* NAVIGATION (Flex) */
+nav {
+    background-color: #6a0dad;
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    border-bottom: 3px solid #b57edc;
+}
 nav ul {
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  list-style: none;
-}
-@media (min-width: 700px) {
-  body {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:
-      "header header"
-      "nav main"
-      "footer footer";
+    list-style: none;
+    display: flex;
+    justify-content: center;
     gap: 2rem;
-  }
-
-  header { grid-area: header; }
-  nav { grid-area: nav; }
-  main { grid-area: main; }
-  footer { grid-area: footer; }
+    margin: 0;
+    padding: 0;
 }
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+nav a:hover {
+    color: #e6d7ff;
+    transform: scale(1.1);
+}
+/* MAIN CONTENT */
+main {
+    display: grid;
+    gap: 2rem;
+}
+section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.15); 
+}
+section h2 {
+    margin-bottom: 1rem;
+    color: #6a0dad;
+}
+section img {
+    margin-top: 1rem;
+    border-radius: 10px;
+    max-width: 100%;
+}
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #6a0dad;
+    color: white;
+    border-radius: 8px;
+}
+/* PROJECT CARDS (for projects.html) */
 .project-grid {
-  display: grid;
-  gap: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
 }
-
 .project-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.15);
+}
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+.project-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #6a0dad;
+    font-weight: bold;
+}
+/* MEDIA QUERY (Desktop Layout) */
+@media (min-width: 700px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main main"
+            "footer footer";
+        gap: 2rem;
+    }
+
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    main { grid-area: main; }
+    footer { grid-area: footer; }
+}
+nav a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+nav a:hover {
+    color: #4b0082;
+    transform: scale(1.1);
+}
+/* Hover animation for project cards */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(106, 13, 173, 0.25);
+}
+/* Hover animation for link inside project cards */
+.project-card a {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+.project-card a:hover {
+    background-color: #6a0dad;
+    color: white;
 }
