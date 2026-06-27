@@ -17,6 +17,6 @@ This project is a multi-page personal portfolio built using semantic HTML, respo
 - Clean commit practices using GitHub Desktop
 
 ## Published Site
-[Your GitHub Pages URL Here]
+(https://github.com/dmcgill413/McGillPortfolio)
 
 ## Notes
