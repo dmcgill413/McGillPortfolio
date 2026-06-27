@@ -7,6 +7,46 @@ BURNT ORANGE = #BF5B04
 EARTH = #733917
 */
 /* Global (base) MOBILE FIRST)*/
-BODY{
-    BACKGROUND-COLOR:#65768C
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+header, nav, main, footer {
+  margin-bottom: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 700px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+    gap: 2rem;
+  }
+
+  header { grid-area: header; }
+  nav { grid-area: nav; }
+  main { grid-area: main; }
+  footer { grid-area: footer; }
+}
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
 }
